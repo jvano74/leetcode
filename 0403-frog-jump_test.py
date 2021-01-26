@@ -88,7 +88,7 @@ class Solution:
         for new_pos in range(stone_number + 1, len(self.stones)):
             cur = self.stones[new_pos] - self.stones[stone_number]
             if cur in [hop_speed - 1, hop_speed, hop_speed + 1]:
-                if self.dfs_with_memo(new_pos, cur):
+                if self.recursive_dfs_with_memo(new_pos, cur):
                     return True
                 else:
                     self.history.add((new_pos, cur))
